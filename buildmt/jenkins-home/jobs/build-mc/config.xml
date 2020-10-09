@@ -106,19 +106,19 @@ make -f makefile.integrity EXECUTABLE=integrity.mac CC=o64-clang; rm -f *.o
 make -f makefile.integrity EXECUTABLE=integrity.win CC=x86_64-w64-mingw32-gcc CFLAGS=&quot;-Wno-pointer-to-int-cast -static -DWIN&quot;; rm -f *.o
 
 cd $WORKSPACE2/masl/src
-make -f makefile.masl EXECUTABLE=masl.linux; rm -f *.o
-make -f makefile.masl EXECUTABLE=masl.mac CC=o64-clang; rm -f *.o
-make -f makefile.masl EXECUTABLE=masl.win CC=x86_64-w64-mingw32-gcc CFLAGS=&quot;-Wno-pointer-to-int-cast -static -DWIN&quot;; rm -f *.o
+make -f makefile.masl EXECUTABLE=masl.linux; CFLAGS=&quot;-g&quot;; rm -f *.o
+make -f makefile.masl EXECUTABLE=masl.mac CC=o64-clang; CFLAGS=&quot;-g&quot;; rm -f *.o
+make -f makefile.masl EXECUTABLE=masl.win CC=x86_64-w64-mingw32-gcc CFLAGS=&quot;-g -Wno-pointer-to-int-cast -static -DWIN&quot;; rm -f *.o
 
 cd $WORKSPACE2/maslin/src
-make -f makefile.maslin EXECUTABLE=m2x.linux; rm -f *.o
-make -f makefile.maslin EXECUTABLE=m2x.mac CC=o64-clang; rm -f *.o
-make -f makefile.maslin EXECUTABLE=m2x.win CC=x86_64-w64-mingw32-gcc CFLAGS=&quot;-Wno-pointer-to-int-cast -static -DWIN&quot;; rm -f *.o
+make -f makefile.maslin EXECUTABLE=m2x.linux; CFLAGS=&quot;-g&quot;; rm -f *.o
+make -f makefile.maslin EXECUTABLE=m2x.mac CC=o64-clang; CFLAGS=&quot;-g&quot;; rm -f *.o
+make -f makefile.maslin EXECUTABLE=m2x.win CC=x86_64-w64-mingw32-gcc CFLAGS=&quot;-g -Wno-pointer-to-int-cast -static -DWIN&quot;; rm -f *.o
 
 cd $WORKSPACE2/maslout/src
-make -f makefile.maslout EXECUTABLE=x2m.linux; rm -f *.o
-make -f makefile.maslout EXECUTABLE=x2m.mac CC=o64-clang; rm -f *.o
-make -f makefile.maslout EXECUTABLE=x2m.win CC=x86_64-w64-mingw32-gcc CFLAGS=&quot;-Wno-pointer-to-int-cast -static -DWIN&quot;; rm -f *.o
+make -f makefile.maslout EXECUTABLE=x2m.linux; CFLAGS=&quot;-g&quot;; rm -f *.o
+make -f makefile.maslout EXECUTABLE=x2m.mac CC=o64-clang; CFLAGS=&quot;-g&quot;; rm -f *.o
+make -f makefile.maslout EXECUTABLE=x2m.win CC=x86_64-w64-mingw32-gcc CFLAGS=&quot;-g -Wno-pointer-to-int-cast -static -DWIN&quot;; rm -f *.o
 
 # copy the executables
 cp $WORKSPACE2/docgen/src/docgen.linux $OUT_DIR
